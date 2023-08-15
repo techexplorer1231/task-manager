@@ -3,7 +3,7 @@ import Navlinks from "./Navlinks";
 import Logo from "./Logo";
 
 function BigSidebar() {
-  const isSidebarOpen = true;
+  const isSidebarOpen = false;
 
   return (
     <Wrapper>
