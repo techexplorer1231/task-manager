@@ -8,12 +8,12 @@ import Wrapper from "../assets/wrappers/SharedLayout";
 function SharedLayout() {
   return (
     <Wrapper>
-      <main className="dashboard">
+      <main className="todo">
         <SmallSidebar />
         <BigSidebar />
         <div>
           <Navbar />
-          <div className="dashboard-page">
+          <div className="todo-page">
             <Outlet />
           </div>
         </div>
