@@ -3,8 +3,9 @@ import { FaTimes } from "react-icons/fa";
 import Logo from "./Logo";
 import Navlinks from "./Navlinks";
 import { useSidebarContext } from "../hooks/useSidebarContext";
+import { BsCalendar2Plus } from "react-icons/bs";
 
-function SmallSidebar() {
+function SmallSidebar({ dispatch }) {
   const { isSidebarOpen, setIsSidebarOpen } = useSidebarContext();
 
   const toggle = () => {
@@ -25,7 +26,10 @@ function SmallSidebar() {
           <header>
             <Logo />
           </header>
-          <Navlinks toggleSidebar={toggle} />
+          <Navlinks toggleSidebar={toggle} dispatch={dispatch} />
+          <button className="list-btn">
+            <BsCalendar2Plus /> New List
+          </button>
         </div>
       </div>
     </Wrapper>

@@ -11,7 +11,7 @@ const AddTodo = ({ dispatch }) => {
     e.preventDefault();
     dispatch({
       type: "TODO_ADD",
-      payload: { id: Date.now(), text: input },
+      payload: { id: Date.now(), title: input },
     });
     setInput("");
   };

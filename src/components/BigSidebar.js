@@ -2,9 +2,14 @@ import Wrapper from "../assets/wrappers/BigSidebar";
 import Navlinks from "./Navlinks";
 import Logo from "./Logo";
 import { useSidebarContext } from "../hooks/useSidebarContext";
+import { BsCalendar2Plus } from "react-icons/bs";
 
-function BigSidebar() {
+function BigSidebar({ todos, dispatch }) {
   const { isSidebarOpen } = useSidebarContext();
+
+  const handleNewList = () => {
+    dispatch({ type: "TODO_NEW_LIST" });
+  };
 
   return (
     <Wrapper>
@@ -17,8 +22,11 @@ function BigSidebar() {
           <header>
             <Logo />
           </header>
-          <Navlinks />
+          <Navlinks dispatch={dispatch} todos={todos} />
         </div>
+        <button className="list-btn" onClick={handleNewList}>
+          <BsCalendar2Plus /> New List
+        </button>
       </div>
     </Wrapper>
   );

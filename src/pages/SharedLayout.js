@@ -5,22 +5,29 @@ import BigSidebar from "../components/BigSidebar";
 import Wrapper from "../assets/wrappers/SharedLayout";
 import AddTodo from "../components/AddTodo";
 import TodoItem from "../components/TodoItem";
-import todoReducer, { initialTodos } from "../reducers/todoReducer";
+import todoReducer, { initialTodosCollection } from "../reducers/todoReducer";
 
 function SharedLayout() {
-  const [todos, dispatch] = useReducer(todoReducer, initialTodos);
+  const [todos, dispatch] = useReducer(todoReducer, initialTodosCollection);
 
   return (
     <Wrapper>
       <main className="todo">
-        <SmallSidebar />
-        <BigSidebar />
+        <SmallSidebar dispatch={dispatch} todos={todos} />
+        <BigSidebar dispatch={dispatch} todos={todos} />
         <div>
           <Navbar />
           <div className="todo-list">
-            {todos.map((todo) => {
-              return <TodoItem key={todo.id} todo={todo} dispatch={dispatch} />;
-            })}
+            {todos
+              .filter((todo) => todo.isActive === true)
+              .map((todo) => {
+                return (
+                  <>
+                    {JSON.stringify(todo)}
+                    <TodoItem key={todo.id} todo={todo} dispatch={dispatch} />
+                  </>
+                );
+              })}
           </div>
           <div className="todo-add">
             <AddTodo dispatch={dispatch} />

@@ -6,6 +6,8 @@ const Wrapper = styled.section`
     grid-template-columns: 1fr;
   }
   .todo-list {
+    display: flex;
+    flex-direction: column;
     width: 90vw;
     height: 80vh;
     margin: 0 auto;

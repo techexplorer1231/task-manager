@@ -1,17 +1,25 @@
-import links from "../utils/links";
+const Navlinks = ({ toggleSidebar, dispatch, todos }) => {
+  console.log(todos);
 
-const Navlinks = ({ toggleSidebar }) => {
+  const updateTodos = (id) => {
+    toggleSidebar();
+    dispatch({ type: "TODO_CHANGE_LIST", payload: id });
+  };
+
   return (
     <div className="nav-links">
-      {links.map((link) => {
-        const { text, path, id, icon } = link;
-        return (
-          <button to={path} key={id} onClick={toggleSidebar}>
-            <span className="icon">{icon}</span>
-            {text}
-          </button>
-        );
-      })}
+      {todos &&
+        todos.map((todo) => {
+          const { collection_id, collection_title } = todo;
+          return (
+            <button
+              key={collection_id}
+              onClick={() => updateTodos(collection_id)}
+            >
+              {collection_title}
+            </button>
+          );
+        })}
     </div>
   );
 };

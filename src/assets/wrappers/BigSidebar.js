@@ -9,7 +9,7 @@ const Wrapper = styled.aside`
       background: var(--white);
       min-height: 100vh;
       height: 100%;
-      width: 250px;
+      width: 15rem;
       margin-left: -250px;
       transition: var(--transition);
     }
@@ -21,7 +21,7 @@ const Wrapper = styled.aside`
       margin-left: 0;
     }
     header {
-      height: 6rem;
+      height: 4rem;
       display: flex;
       align-items: center;
       padding-left: 2.5rem;
@@ -60,6 +60,14 @@ const Wrapper = styled.aside`
     }
     .active .icon {
       color: var(--primary-500);
+    }
+
+    .list-btn {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 15rem;
+      height: 2rem;
     }
   }
 `;

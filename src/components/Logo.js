@@ -1,8 +1,10 @@
 import React from "react";
-import logo from "../assets/images/logo.svg";
+import logo from "../assets/images/todo-logo.png";
 
 const Logo = () => {
-  return <img src={logo} alt="Todo logo" className="logo" />;
+  return (
+    <img src={logo} height={50} width={120} alt="Todo logo" className="logo" />
+  );
 };
 
 export default Logo;
