@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const AddTodo = () => {
+const AddTodo = ({ dispatch }) => {
   const [input, setInput] = useState("");
 
   const handleChange = (e) => {
@@ -9,7 +9,11 @@ const AddTodo = () => {
 
   const handleAddTodo = (e) => {
     e.preventDefault();
-    console.log(input);
+    dispatch({
+      type: "TODO_ADD",
+      payload: { id: Date.now(), text: input },
+    });
+    setInput("");
   };
 
   return (
