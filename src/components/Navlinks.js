@@ -1,9 +1,9 @@
 const Navlinks = ({ toggleSidebar, dispatch, todos }) => {
   console.log(todos);
 
-  const updateTodos = (id) => {
+  const updateTodos = (collection_id) => {
     toggleSidebar();
-    dispatch({ type: "TODO_CHANGE_LIST", payload: id });
+    dispatch({ type: "TODO_CHANGE_LIST", payload: collection_id });
   };
 
   return (

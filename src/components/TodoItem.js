@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { MdEdit, MdDelete } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
+import { TbEdit } from "react-icons/tb";
 import Wrapper from "../assets/wrappers/TodoItem";
 import TodoEdit from "./TodoEdit";
 
 const TodoItem = ({ todo, dispatch }) => {
   const [isCompleted, setIsCompleted] = useState(todo.completed);
-  const [isEditing, setIsEditing] = useState(false);
+  const [isEditing, setIsEditing] = useState(todo.isEditing);
 
   const toggleCheckbox = (id) => {
     setIsCompleted(!isCompleted);
@@ -14,6 +15,7 @@ const TodoItem = ({ todo, dispatch }) => {
 
   const handleEdit = () => {
     setIsEditing(!isEditing);
+    dispatch({ type: "TODO_EDIT_TOGGLE", payload: todo.id });
   };
 
   const textContent = isEditing ? (
@@ -37,7 +39,7 @@ const TodoItem = ({ todo, dispatch }) => {
         {textContent}
         {!isEditing && (
           <button onClick={handleEdit} className="todo-edit-btn">
-            <MdEdit />
+            <TbEdit />
           </button>
         )}
         <button

@@ -1,12 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
+import useFocusInput from "../hooks/useFocusInput";
 
 const TodoEdit = ({ todo, dispatch, handleEdit }) => {
   const [title, setTitle] = useState(todo.title);
-  const editInputRef = useRef(null);
-
-  useEffect(() => {
-    editInputRef.current.focus();
-  }, []);
+  const inputRef = useFocusInput();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,12 +20,7 @@ const TodoEdit = ({ todo, dispatch, handleEdit }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        ref={editInputRef}
-        type="text"
-        value={title}
-        onChange={handleChange}
-      />
+      <input ref={inputRef} type="text" value={title} onChange={handleChange} />
     </form>
   );
 };

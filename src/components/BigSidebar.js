@@ -22,7 +22,11 @@ function BigSidebar({ todos, dispatch }) {
           <header>
             <Logo />
           </header>
-          <Navlinks dispatch={dispatch} todos={todos} />
+          <Navlinks
+            dispatch={dispatch}
+            todos={todos}
+            toggleSidebar={console.log}
+          />
         </div>
         <button className="list-btn" onClick={handleNewList}>
           <BsCalendar2Plus /> New List
