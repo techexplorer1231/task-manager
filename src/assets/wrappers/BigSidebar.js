@@ -63,7 +63,7 @@ const Wrapper = styled.aside`
     }
 
     .list-btn {
-      position: absolute;
+      position: fixed;
       left: 0;
       bottom: 0;
       width: 15rem;

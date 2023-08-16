@@ -1,6 +1,4 @@
 const Navlinks = ({ toggleSidebar, dispatch, todos }) => {
-  console.log(todos);
-
   const updateTodos = (collection_id) => {
     toggleSidebar();
     dispatch({ type: "TODO_CHANGE_LIST", payload: collection_id });
@@ -15,6 +13,7 @@ const Navlinks = ({ toggleSidebar, dispatch, todos }) => {
             <button
               key={collection_id}
               onClick={() => updateTodos(collection_id)}
+              className="nav-link active"
             >
               {collection_title}
             </button>

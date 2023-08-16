@@ -1,3 +1,5 @@
+import { generateUniqueTitle } from "../utils/generateUniqueTitle";
+
 export default function todoReducer(todosCollection, action) {
   const { type } = action;
   switch (type) {
@@ -74,7 +76,10 @@ export default function todoReducer(todosCollection, action) {
       const op = [
         ...todosCollection,
         {
-          collection_title: "Untitled List",
+          collection_title: generateUniqueTitle(
+            "Untitled List",
+            todosCollection
+          ),
           collection_id: Date.now(),
           isActive: false,
           todos: [{ id, title: "Your first Todo", completed: false }],
@@ -147,7 +152,7 @@ export default function todoReducer(todosCollection, action) {
 
 export const initialTodosCollection = [
   {
-    collection_title: "personal",
+    collection_title: "Daily Tasks 📝",
     collection_id: 0,
     isActive: true,
     isTitleEditing: false,

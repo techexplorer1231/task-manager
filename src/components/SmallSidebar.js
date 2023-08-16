@@ -5,11 +5,15 @@ import Navlinks from "./Navlinks";
 import { useSidebarContext } from "../hooks/useSidebarContext";
 import { BsCalendar2Plus } from "react-icons/bs";
 
-function SmallSidebar({ dispatch }) {
+function SmallSidebar({ dispatch, todos }) {
   const { isSidebarOpen, setIsSidebarOpen } = useSidebarContext();
 
   const toggle = () => {
     setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const handleNewList = () => {
+    dispatch({ type: "TODO_NEW_LIST" });
   };
 
   return (
@@ -26,8 +30,8 @@ function SmallSidebar({ dispatch }) {
           <header>
             <Logo />
           </header>
-          <Navlinks toggleSidebar={toggle} dispatch={dispatch} />
-          <button className="list-btn">
+          <Navlinks toggleSidebar={toggle} dispatch={dispatch} todos={todos} />
+          <button className="list-btn" onClick={handleNewList}>
             <BsCalendar2Plus /> New List
           </button>
         </div>

@@ -21,9 +21,9 @@ const TodoTitle = ({ list, dispatch }) => {
     <TodoTitleEdit list={list} dispatch={dispatch} handleEdit={handleEdit} />
   ) : (
     <>
-      <h3 className="todo-title">
+      <h3 className="todo-title" onClick={handleEdit}>
         {list.collection_title}
-        <button onClick={handleEdit}>
+        <button>
           <TbEdit />
         </button>
       </h3>
