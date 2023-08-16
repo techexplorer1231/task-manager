@@ -1,10 +1,13 @@
 import Wrapper from "../assets/wrappers/Navbar";
 import { FaAlignLeft } from "react-icons/fa";
 import Logo from "./Logo";
+import { useSidebarContext } from "../hooks/useSidebarContext";
 
 function Navbar() {
+  const { isSidebarOpen, setIsSidebarOpen } = useSidebarContext();
+
   const toggle = () => {
-    console.log("toggle");
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
@@ -15,7 +18,7 @@ function Navbar() {
         </button>
         <div>
           <Logo />
-          <h3 className="logo-text">dashboard</h3>
+          <h4 className="logo-text">Your Task Organizer</h4>
         </div>
       </div>
     </Wrapper>

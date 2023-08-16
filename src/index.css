@@ -43,7 +43,7 @@ html {
   --fixed-width: 500px;
   --fluid-width: 90vw;
   --breakpoint-lg: 992px;
-  --nav-height: 6rem;
+  --nav-height: 4rem;
 
   /* rest of the colors */
   --white: #fff;

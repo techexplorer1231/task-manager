@@ -1,9 +1,10 @@
 import Wrapper from "../assets/wrappers/BigSidebar";
 import Navlinks from "./Navlinks";
 import Logo from "./Logo";
+import { useSidebarContext } from "../hooks/useSidebarContext";
 
 function BigSidebar() {
-  const isSidebarOpen = false;
+  const { isSidebarOpen } = useSidebarContext();
 
   return (
     <Wrapper>

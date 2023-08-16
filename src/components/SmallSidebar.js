@@ -2,12 +2,13 @@ import Wrapper from "../assets/wrappers/SmallSidebar";
 import { FaTimes } from "react-icons/fa";
 import Logo from "./Logo";
 import Navlinks from "./Navlinks";
+import { useSidebarContext } from "../hooks/useSidebarContext";
 
 function SmallSidebar() {
-  const isSidebarOpen = true;
+  const { isSidebarOpen, setIsSidebarOpen } = useSidebarContext();
 
   const toggle = () => {
-    console.log("small toggle");
+    setIsSidebarOpen(!isSidebarOpen);
   };
 
   return (
