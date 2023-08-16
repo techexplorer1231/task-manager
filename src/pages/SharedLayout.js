@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import SmallSidebar from "../components/SmallSidebar";
 import BigSidebar from "../components/BigSidebar";
 import Wrapper from "../assets/wrappers/SharedLayout";
+import AddTodo from "../components/AddTodo";
 
 function SharedLayout() {
   return (
@@ -13,8 +14,11 @@ function SharedLayout() {
         <BigSidebar />
         <div>
           <Navbar />
-          <div className="todo-page">
+          <div className="todo-list">
             <Outlet />
+          </div>
+          <div className="todo-add">
+            <AddTodo />
           </div>
         </div>
       </main>

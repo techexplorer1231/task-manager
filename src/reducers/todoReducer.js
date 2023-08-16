@@ -1,6 +1,6 @@
 export default function todoReducer(todos, action) {
   switch (action.type) {
-    case "added": {
+    case "TODO_ADD": {
       return [
         ...todos,
         {
@@ -10,7 +10,7 @@ export default function todoReducer(todos, action) {
         },
       ];
     }
-    case "changed": {
+    case "TODO_EDIT": {
       return todos.map((t) => {
         if (t.id === action.task.id) {
           return action.task;
@@ -19,7 +19,7 @@ export default function todoReducer(todos, action) {
         }
       });
     }
-    case "deleted": {
+    case "TODO_DELETE": {
       return todos.filter((t) => t.id !== action.id);
     }
     default: {
