@@ -4,12 +4,12 @@ import { TbEdit } from "react-icons/tb";
 import Wrapper from "../assets/wrappers/TodoItem";
 import TodoEdit from "./TodoEdit";
 import { TODO_TOGGLE } from "../constants/actionTypes";
-import { TODO_EDIT_TOGGLE } from "../constants/actionTypes";
 import { TODO_DELETE } from "../constants/actionTypes";
+import { TODO_EDIT_ENABLE } from "../constants/actionTypes";
 
 const TodoItem = ({ todo, dispatch }) => {
   const [isCompleted, setIsCompleted] = useState(todo.completed);
-  const [isEditing, setIsEditing] = useState(todo.isEditing);
+  const isEditing = todo.isEditing;
 
   const toggleCheckbox = (id) => {
     setIsCompleted(!isCompleted);
@@ -17,12 +17,11 @@ const TodoItem = ({ todo, dispatch }) => {
   };
 
   const handleEdit = () => {
-    setIsEditing(!isEditing);
-    dispatch({ type: TODO_EDIT_TOGGLE, payload: todo.id });
+    dispatch({ type: TODO_EDIT_ENABLE, payload: todo.id });
   };
 
   const textContent = isEditing ? (
-    <TodoEdit todo={todo} dispatch={dispatch} handleEdit={handleEdit} />
+    <TodoEdit todo={todo} dispatch={dispatch} />
   ) : (
     <label
       htmlFor={todo.id}

@@ -1,12 +1,12 @@
 import React from "react";
 import Wrapper from "../assets/wrappers/TodoTitleEdit";
-import { TODO_EDIT_collectionTitle } from "../constants/actionTypes";
+import { TODO_EDIT_COLLECTION_TITLE } from "../constants/actionTypes";
 import TextInputForm from "./TextInputForm";
 
 const TodoTitleEdit = ({ list, dispatch, handleEdit }) => {
   const handleSubmit = (collectionTitle) => {
     dispatch({
-      type: TODO_EDIT_collectionTitle,
+      type: TODO_EDIT_COLLECTION_TITLE,
       payload: { collectionTitle, id: list.collectionId },
     });
     handleEdit();
@@ -20,15 +20,6 @@ const TodoTitleEdit = ({ list, dispatch, handleEdit }) => {
         formClassName="form-section"
         inputClassName="form-input"
       />
-      {/* <form onSubmit={handleSubmit} className="form-section">
-        <input
-          type="text"
-          ref={inputRef}
-          value={collectionTitle}
-          onChange={handleCollectionEdit}
-          className="form-input"
-        />
-      </form> */}
     </Wrapper>
   );
 };
