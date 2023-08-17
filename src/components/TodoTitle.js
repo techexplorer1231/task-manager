@@ -8,7 +8,7 @@ import { TODO_DELETE_LIST } from "../constants/actionTypes";
 const TodoTitle = ({ list, dispatch }) => {
   const [isEdit, setIsEdit] = useState(false);
 
-  const handleEdit = () => {
+  const handleEditTitle = () => {
     setIsEdit(!isEdit);
   };
 
@@ -23,11 +23,11 @@ const TodoTitle = ({ list, dispatch }) => {
   const listTitle = (
     <Wrapper>
       <div className="title-section">
-        <article className="todo-title" onClick={handleEdit}>
+        <article className="todo-title" onClick={handleEditTitle}>
           {list.collectionTitle}
         </article>
         <div>
-          <Button onClick={handleEdit}>Edit Title</Button>
+          <Button onClick={handleEditTitle}>Edit Title</Button>
           <Button onClick={handleListDelete}>Delete List</Button>
           <Button onClick={handleMultipleDelete}>Delete Selected</Button>
         </div>
@@ -36,7 +36,11 @@ const TodoTitle = ({ list, dispatch }) => {
   );
 
   const textContent = isEdit ? (
-    <TodoTitleEdit list={list} dispatch={dispatch} handleEdit={handleEdit} />
+    <TodoTitleEdit
+      list={list}
+      dispatch={dispatch}
+      handleEdit={handleEditTitle}
+    />
   ) : (
     listTitle
   );

@@ -1,3 +1,4 @@
+import React from "react";
 import Wrapper from "../assets/wrappers/Navbar";
 import { FaAlignLeft } from "react-icons/fa";
 import Logo from "./Logo";

@@ -1,22 +1,32 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer, useState } from "react";
 import Navbar from "../components/Navbar";
 import SmallSidebar from "../components/SmallSidebar";
 import BigSidebar from "../components/BigSidebar";
 import Wrapper from "../assets/wrappers/Layout";
 import todoReducer, { initialTodosCollection } from "../reducers/todoReducer";
 import TodoContainer from "../containers/TodoContainer";
+import SidebarContainer from "../containers/SidebarContainer";
 
 function Layout() {
+  const [titles, setTitles] = useState([]);
   const [todosCollection, dispatch] = useReducer(
     todoReducer,
     initialTodosCollection
   );
 
+  useEffect(() => {
+    const todosTitle = todosCollection.map((todo) => ({
+      collectionTitle: todo.collectionTitle,
+      collectionId: todo.collectionId,
+      isActive: todo.isActive,
+    }));
+    setTitles(todosTitle);
+  }, [todosCollection, dispatch]);
+
   return (
     <Wrapper>
       <main className="todo">
-        <SmallSidebar dispatch={dispatch} todos={todosCollection} />
-        <BigSidebar dispatch={dispatch} todos={todosCollection} />
+        <SidebarContainer titles={titles} dispatch={dispatch} />
         <div>
           <Navbar />
           <TodoContainer
