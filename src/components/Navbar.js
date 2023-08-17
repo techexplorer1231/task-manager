@@ -12,15 +12,15 @@ function Navbar() {
 
   return (
     <Wrapper>
-      <div className="nav-center">
+      <header className="nav-center">
         <button type="button" className="toggle-btn" onClick={toggle}>
           <FaAlignLeft />
         </button>
-        <div>
+        <nav>
           <Logo />
           <h4 className="logo-text">Your Task Organizer</h4>
-        </div>
-      </div>
+        </nav>
+      </header>
     </Wrapper>
   );
 }

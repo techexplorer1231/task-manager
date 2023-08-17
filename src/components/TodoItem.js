@@ -37,17 +37,23 @@ const TodoItem = ({ todo, dispatch }) => {
           onChange={() => toggleCheckbox(todo.id)}
         />
         {textContent}
-        {!isEditing && (
-          <button onClick={handleEdit} className="todo-edit-btn">
-            <TbEdit />
-          </button>
-        )}
-        <button
-          className="todo-delete-btn"
-          onClick={() => dispatch({ type: "TODO_DELETE", payload: todo.id })}
-        >
-          <MdDelete />
-        </button>
+        <div>
+          {!isEditing && (
+            <button onClick={handleEdit} className="todo-edit-btn">
+              <TbEdit />
+            </button>
+          )}
+          {!isEditing && (
+            <button
+              className="todo-delete-btn"
+              onClick={() =>
+                dispatch({ type: "TODO_DELETE", payload: todo.id })
+              }
+            >
+              <MdDelete />
+            </button>
+          )}
+        </div>
       </div>
     </Wrapper>
   );

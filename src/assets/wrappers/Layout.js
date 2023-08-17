@@ -9,8 +9,9 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     width: 90vw;
-    height: 75vh;
+    height: 68vh;
     margin: 0 auto;
+    overflow-x: auto;
   }
 
   .todo-add {
@@ -26,7 +27,9 @@ const Wrapper = styled.section`
     }
     .todo-list {
       width: 90%;
-      height: 75vh;
+      height: 72vh;
+      overflow-x: auto;
+      display: flex;
     }
     .todo-add {
       width: 90%;

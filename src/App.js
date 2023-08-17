@@ -1,9 +1,9 @@
-import SharedLayout from "./pages/SharedLayout";
+import Layout from "./pages/Layout";
 
 function App() {
   return (
     <div className="App">
-      <SharedLayout />
+      <Layout />
     </div>
   );
 }

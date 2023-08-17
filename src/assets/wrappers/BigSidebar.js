@@ -12,6 +12,7 @@ const Wrapper = styled.aside`
       width: 15rem;
       margin-left: -250px;
       transition: var(--transition);
+      position: relative;
     }
     .content {
       position: sticky;
@@ -43,7 +44,7 @@ const Wrapper = styled.aside`
       background: transparent;
     }
     .btn-link:hover {
-      background: var(--primary-500);
+      background: var(--primary-400);
       padding-left: 3rem;
       color: var(--white);
       cursor: pointer;
@@ -57,15 +58,15 @@ const Wrapper = styled.aside`
     }
     .active {
       color: var(--white);
-      background: var(--primary-500);
+      background: var(--primary-400);
     }
 
     .list-btn {
-      position: fixed;
+      position: absolute;
       left: 0;
       bottom: 0;
       width: 15rem;
-      background: var(--primary-500);
+      background: var(--primary-400);
       border: 1px solid var(--grey-50);
       color: var(--white);
       padding: 1rem 0;

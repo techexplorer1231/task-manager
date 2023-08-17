@@ -10,6 +10,8 @@ const AddTodo = ({ dispatch }) => {
 
   const handleAddTodo = (e) => {
     e.preventDefault();
+    // return in case of empty input
+    if (!input) return;
     dispatch({
       type: "TODO_ADD",
       payload: {

@@ -2,13 +2,13 @@ import React, { useEffect, useReducer, useState } from "react";
 import Navbar from "../components/Navbar";
 import SmallSidebar from "../components/SmallSidebar";
 import BigSidebar from "../components/BigSidebar";
-import Wrapper from "../assets/wrappers/SharedLayout";
+import Wrapper from "../assets/wrappers/Layout";
 import AddTodo from "../components/AddTodo";
 import TodoItem from "../components/TodoItem";
 import todoReducer, { initialTodosCollection } from "../reducers/todoReducer";
 import TodoTitle from "../components/TodoTitle";
 
-function SharedLayout() {
+function Layout() {
   const [todosCollection, dispatch] = useReducer(
     todoReducer,
     initialTodosCollection
@@ -44,4 +44,4 @@ function SharedLayout() {
   );
 }
 
-export default SharedLayout;
+export default Layout;

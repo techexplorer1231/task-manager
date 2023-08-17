@@ -85,7 +85,6 @@ export default function todoReducer(todosCollection, action) {
           todos: [{ id, title: "Your first Todo", completed: false }],
         },
       ];
-      console.log("op", op);
       return op;
     }
     case "EDIT_COLLECTION_TITLE": {
@@ -115,7 +114,6 @@ export default function todoReducer(todosCollection, action) {
         }
         return collection;
       });
-      console.log("TODO_EDIT_TOGGLE_UPDATED", updatedTodos);
       return updatedTodos;
     }
     case "DELETE_LIST": {
