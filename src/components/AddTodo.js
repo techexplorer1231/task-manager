@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Wrapper from "../assets/wrappers/AddTodo";
 
 const AddTodo = ({ dispatch }) => {
   const [input, setInput] = useState("");
@@ -22,8 +23,8 @@ const AddTodo = ({ dispatch }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleAddTodo}>
+    <Wrapper>
+      <form onSubmit={handleAddTodo} className="add-section">
         <input
           className="add-todo"
           type="text"
@@ -32,7 +33,7 @@ const AddTodo = ({ dispatch }) => {
           onChange={handleChange}
         />
       </form>
-    </div>
+    </Wrapper>
   );
 };
 

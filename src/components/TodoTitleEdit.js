@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useFocusInput from "../hooks/useFocusInput";
+import Wrapper from "../assets/wrappers/TodoTitleEdit";
 
 const TodoTitleEdit = ({ list, dispatch, handleEdit }) => {
   const [collectionTitle, setCollectionTitle] = useState(list.collection_title);
@@ -20,14 +21,17 @@ const TodoTitleEdit = ({ list, dispatch, handleEdit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        ref={inputRef}
-        value={collectionTitle}
-        onChange={handleCollectionEdit}
-      />
-    </form>
+    <Wrapper>
+      <form onSubmit={handleSubmit} className="form-section">
+        <input
+          type="text"
+          ref={inputRef}
+          value={collectionTitle}
+          onChange={handleCollectionEdit}
+          className="form-input"
+        />
+      </form>
+    </Wrapper>
   );
 };
 

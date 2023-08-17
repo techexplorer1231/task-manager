@@ -9,15 +9,15 @@ const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
     width: 90vw;
-    height: 80vh;
+    height: 75vh;
     margin: 0 auto;
-    padding: 2rem 0;
   }
 
   .todo-add {
     margin: 0 auto;
     padding: 2rem 0;
     width: 90vw;
+    background: var(--grey-100);
   }
 
   @media (min-width: 992px) {
@@ -26,7 +26,7 @@ const Wrapper = styled.section`
     }
     .todo-list {
       width: 90%;
-      height: 80vh;
+      height: 75vh;
     }
     .todo-add {
       width: 90%;

@@ -37,9 +37,7 @@ function SharedLayout() {
               return <TodoItem key={todo.id} todo={todo} dispatch={dispatch} />;
             })}
           </div>
-          <div className="todo-add">
-            <AddTodo dispatch={dispatch} />
-          </div>
+          <AddTodo dispatch={dispatch} />
         </div>
       </main>
     </Wrapper>

@@ -5,15 +5,15 @@ const Navlinks = ({ toggleSidebar, dispatch, todos }) => {
   };
 
   return (
-    <div className="nav-links">
+    <div className="btn-links">
       {todos &&
         todos.map((todo) => {
-          const { collection_id, collection_title } = todo;
+          const { collection_id, collection_title, isActive } = todo;
           return (
             <button
               key={collection_id}
               onClick={() => updateTodos(collection_id)}
-              className="nav-link active"
+              className={isActive ? "btn-link active" : "btn-link"}
             >
               {collection_title}
             </button>

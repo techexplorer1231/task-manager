@@ -28,7 +28,7 @@ function BigSidebar({ todos, dispatch }) {
             toggleSidebar={console.log}
           />
         </div>
-        <button className="list-btn" onClick={handleNewList}>
+        <button type="button" className="list-btn" onClick={handleNewList}>
           <BsCalendar2Plus /> New List
         </button>
       </div>
