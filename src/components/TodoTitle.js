@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import TodoTitleEdit from "./TodoTitleEdit";
 import Wrapper from "../assets/wrappers/TodoTitle";
 import Button from "../assets/wrappers/Button";
+import { TODO_DELETE_MULTIPLE } from "../constants/actionTypes";
+import { TODO_DELETE_LIST } from "../constants/actionTypes";
 
 const TodoTitle = ({ list, dispatch }) => {
   const [isEdit, setIsEdit] = useState(false);
@@ -11,11 +13,11 @@ const TodoTitle = ({ list, dispatch }) => {
   };
 
   const handleListDelete = () => {
-    dispatch({ type: "DELETE_LIST", payload: list.collection_id });
+    dispatch({ type: TODO_DELETE_LIST, payload: list.collection_id });
   };
 
   const handleMultipleDelete = () => {
-    dispatch({ type: "TODO_DELETE_MULTIPLE", payload: list.collection_id });
+    dispatch({ type: TODO_DELETE_MULTIPLE, payload: list.collection_id });
   };
 
   const listTitle = (

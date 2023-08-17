@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useFocusInput from "../hooks/useFocusInput";
+import { TODO_EDIT } from "../constants/actionTypes";
 
 const TodoEdit = ({ todo, dispatch, handleEdit }) => {
   const [title, setTitle] = useState(todo.title);
@@ -8,7 +9,7 @@ const TodoEdit = ({ todo, dispatch, handleEdit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({
-      type: "TODO_EDIT",
+      type: TODO_EDIT,
       payload: { id: todo.id, title },
     });
     handleEdit();

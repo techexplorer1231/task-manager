@@ -3,6 +3,9 @@ import { MdDelete } from "react-icons/md";
 import { TbEdit } from "react-icons/tb";
 import Wrapper from "../assets/wrappers/TodoItem";
 import TodoEdit from "./TodoEdit";
+import { TODO_TOGGLE } from "../constants/actionTypes";
+import { TODO_EDIT_TOGGLE } from "../constants/actionTypes";
+import { TODO_DELETE } from "../constants/actionTypes";
 
 const TodoItem = ({ todo, dispatch }) => {
   const [isCompleted, setIsCompleted] = useState(todo.completed);
@@ -10,12 +13,12 @@ const TodoItem = ({ todo, dispatch }) => {
 
   const toggleCheckbox = (id) => {
     setIsCompleted(!isCompleted);
-    dispatch({ type: "TODO_TOGGLE", payload: id });
+    dispatch({ type: TODO_TOGGLE, payload: id });
   };
 
   const handleEdit = () => {
     setIsEditing(!isEditing);
-    dispatch({ type: "TODO_EDIT_TOGGLE", payload: todo.id });
+    dispatch({ type: TODO_EDIT_TOGGLE, payload: todo.id });
   };
 
   const textContent = isEditing ? (
@@ -46,9 +49,7 @@ const TodoItem = ({ todo, dispatch }) => {
           {!isEditing && (
             <button
               className="todo-delete-btn"
-              onClick={() =>
-                dispatch({ type: "TODO_DELETE", payload: todo.id })
-              }
+              onClick={() => dispatch({ type: TODO_DELETE, payload: todo.id })}
             >
               <MdDelete />
             </button>

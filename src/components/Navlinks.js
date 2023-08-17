@@ -1,7 +1,9 @@
+import { TODO_CHANGE_LIST } from "../constants/actionTypes";
+
 const Navlinks = ({ toggleSidebar, dispatch, todos }) => {
   const updateTodos = (collection_id) => {
     toggleSidebar && toggleSidebar();
-    dispatch({ type: "TODO_CHANGE_LIST", payload: collection_id });
+    dispatch({ type: TODO_CHANGE_LIST, payload: collection_id });
   };
 
   return (

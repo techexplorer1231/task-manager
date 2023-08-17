@@ -1,9 +1,21 @@
 import { generateUniqueTitle } from "../utils/generateUniqueTitle";
+import {
+  TODO_ADD,
+  TODO_TOGGLE,
+  TODO_EDIT,
+  TODO_DELETE,
+  TODO_CHANGE_LIST,
+  TODO_NEW_LIST,
+  TODO_EDIT_COLLECTION_TITLE,
+  TODO_EDIT_TOGGLE,
+  TODO_DELETE_LIST,
+  TODO_DELETE_MULTIPLE,
+} from "../constants/actionTypes";
 
 export default function todoReducer(todosCollection, action) {
   const { type } = action;
   switch (type) {
-    case "TODO_ADD": {
+    case TODO_ADD: {
       const { payload } = action;
       console.log("todoReducer", action);
       const updatedTodos = todosCollection.map((collection) => {
@@ -17,7 +29,7 @@ export default function todoReducer(todosCollection, action) {
       });
       return updatedTodos;
     }
-    case "TODO_TOGGLE": {
+    case TODO_TOGGLE: {
       const todoId = action.payload;
       const updatedTodos = todosCollection.map((collection) => {
         if (collection.isActive) {
@@ -34,7 +46,7 @@ export default function todoReducer(todosCollection, action) {
       });
       return updatedTodos;
     }
-    case "TODO_EDIT": {
+    case TODO_EDIT: {
       const { id, title } = action.payload;
       const updatedTodos = todosCollection.map((collection) => {
         if (collection.isActive) {
@@ -48,10 +60,9 @@ export default function todoReducer(todosCollection, action) {
         }
         return collection;
       });
-      console.log("TODO_EDIT", updatedTodos);
       return updatedTodos;
     }
-    case "TODO_DELETE": {
+    case TODO_DELETE: {
       const todoId = action.payload;
       const updatedTodos = todosCollection.map((collection) => {
         if (collection.isActive) {
@@ -64,7 +75,7 @@ export default function todoReducer(todosCollection, action) {
       });
       return updatedTodos;
     }
-    case "TODO_CHANGE_LIST": {
+    case TODO_CHANGE_LIST: {
       const collectionId = action.payload;
       const updatedState = todosCollection.map((collection) => ({
         ...collection,
@@ -72,7 +83,7 @@ export default function todoReducer(todosCollection, action) {
       }));
       return updatedState;
     }
-    case "TODO_NEW_LIST": {
+    case TODO_NEW_LIST: {
       const id = Date.now();
       const op = [
         ...todosCollection,
@@ -88,7 +99,7 @@ export default function todoReducer(todosCollection, action) {
       ];
       return op;
     }
-    case "EDIT_COLLECTION_TITLE": {
+    case TODO_EDIT_COLLECTION_TITLE: {
       const { id, collectionTitle } = action.payload;
       const updatedState = todosCollection.map((collection) => {
         if (collection.collection_id === id) {
@@ -101,8 +112,7 @@ export default function todoReducer(todosCollection, action) {
       });
       return updatedState;
     }
-    case "TODO_EDIT_TOGGLE": {
-      console.log("TODO_EDIT_TOGGLE", action.payload);
+    case TODO_EDIT_TOGGLE: {
       const todoId = action.payload;
       const updatedTodos = todosCollection.map((collection) => {
         if (collection.isActive) {
@@ -117,7 +127,7 @@ export default function todoReducer(todosCollection, action) {
       });
       return updatedTodos;
     }
-    case "DELETE_LIST": {
+    case TODO_DELETE_LIST: {
       const collectionId = action.payload;
       const updatedState = todosCollection.filter(
         (collection) => collection.collection_id !== collectionId
@@ -131,7 +141,7 @@ export default function todoReducer(todosCollection, action) {
       }
       return updatedState;
     }
-    case "TODO_DELETE_MULTIPLE": {
+    case TODO_DELETE_MULTIPLE: {
       const updatedTodos = todosCollection.map((collection) => {
         if (collection.isActive) {
           return {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useFocusInput from "../hooks/useFocusInput";
 import Wrapper from "../assets/wrappers/TodoTitleEdit";
+import { TODO_EDIT_COLLECTION_TITLE } from "../constants/actionTypes";
 
 const TodoTitleEdit = ({ list, dispatch, handleEdit }) => {
   const [collectionTitle, setCollectionTitle] = useState(list.collection_title);
@@ -14,7 +15,7 @@ const TodoTitleEdit = ({ list, dispatch, handleEdit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch({
-      type: "EDIT_COLLECTION_TITLE",
+      type: TODO_EDIT_COLLECTION_TITLE,
       payload: { collectionTitle, id: list.collection_id },
     });
     handleEdit();

@@ -3,12 +3,13 @@ import Navlinks from "./Navlinks";
 import Logo from "./Logo";
 import { useSidebarContext } from "../hooks/useSidebarContext";
 import { BsCalendar2Plus } from "react-icons/bs";
+import { TODO_NEW_LIST } from "../constants/actionTypes";
 
 function BigSidebar({ todos, dispatch }) {
   const { isSidebarOpen } = useSidebarContext();
 
   const handleNewList = () => {
-    dispatch({ type: "TODO_NEW_LIST" });
+    dispatch({ type: TODO_NEW_LIST });
   };
 
   return (

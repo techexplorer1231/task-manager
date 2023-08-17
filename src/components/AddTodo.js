@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Wrapper from "../assets/wrappers/AddTodo";
+import { TODO_ADD } from "../constants/actionTypes";
 
 const AddTodo = ({ dispatch }) => {
   const [input, setInput] = useState("");
@@ -13,7 +14,7 @@ const AddTodo = ({ dispatch }) => {
     // return in case of empty input
     if (!input) return;
     dispatch({
-      type: "TODO_ADD",
+      type: TODO_ADD,
       payload: {
         id: Date.now(),
         title: input,
