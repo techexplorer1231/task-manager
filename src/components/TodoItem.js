@@ -20,6 +20,10 @@ const TodoItem = ({ todo, dispatch }) => {
     dispatch({ type: TODO_EDIT_ENABLE, payload: todo.id });
   };
 
+  const handleDelete = () => {
+    dispatch({ type: TODO_DELETE, payload: todo.id });
+  };
+
   const textContent = isEditing ? (
     <TodoEdit todo={todo} dispatch={dispatch} />
   ) : (
@@ -49,10 +53,7 @@ const TodoItem = ({ todo, dispatch }) => {
             </button>
           )}
           {!isEditing && (
-            <button
-              className="todo-delete-btn"
-              onClick={() => dispatch({ type: TODO_DELETE, payload: todo.id })}
-            >
+            <button className="todo-delete-btn" onClick={handleDelete}>
               <MdDelete />
             </button>
           )}

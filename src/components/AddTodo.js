@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Wrapper from "../assets/wrappers/AddTodo";
 import { TODO_ADD } from "../constants/actionTypes";
 import TextInputForm from "./TextInputForm";
 
 const AddTodo = ({ dispatch }) => {
-  const handleAddTodo = (inputValue) => {
-    dispatch({
-      type: TODO_ADD,
-      payload: {
-        id: Date.now(),
-        title: inputValue,
-        completed: false,
-        isEditing: false,
-      },
-    });
-  };
+  const handleAddTodo = useCallback(
+    (inputValue) => {
+      dispatch({
+        type: TODO_ADD,
+        payload: {
+          id: Date.now(),
+          title: inputValue,
+          completed: false,
+          isEditing: false,
+        },
+      });
+    },
+    [dispatch]
+  );
 
   return (
     <Wrapper>
