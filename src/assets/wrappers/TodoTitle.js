@@ -12,8 +12,10 @@ const Wrapper = styled.h3`
   }
 
   .todo-title {
+    transition: color 0.5s ease-in-out, border-bottom-color 0.5s ease-in-out;
+
     &:hover {
-      background-color: var(--primary-400);
+      border-bottom: solid 2px var(--primary-400);
       cursor: pointer;
     }
   }

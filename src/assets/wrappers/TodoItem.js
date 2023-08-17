@@ -49,6 +49,10 @@ const Wrapper = styled.div`
     font-size: 18px;
   }
 
+  .completed {
+    text-decoration: line-through;
+  }
+
   .todo-edit-btn {
     background-color: var(--primary-400);
     color: white;

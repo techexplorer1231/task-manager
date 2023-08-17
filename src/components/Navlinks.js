@@ -1,23 +1,23 @@
 import { TODO_CHANGE_LIST } from "../constants/actionTypes";
 
 const Navlinks = ({ toggleSidebar, dispatch, todos }) => {
-  const updateTodos = (collection_id) => {
+  const updateTodos = (collectionId) => {
     toggleSidebar && toggleSidebar();
-    dispatch({ type: TODO_CHANGE_LIST, payload: collection_id });
+    dispatch({ type: TODO_CHANGE_LIST, payload: collectionId });
   };
 
   return (
     <div className="btn-links">
       {todos
         ? todos.map((todo) => {
-            const { collection_id, collection_title, isActive } = todo;
+            const { collectionId, collectionTitle, isActive } = todo;
             return (
               <button
-                key={collection_id}
-                onClick={() => updateTodos(collection_id)}
+                key={collectionId}
+                onClick={() => updateTodos(collectionId)}
                 className={isActive ? "btn-link active" : "btn-link"}
               >
-                {collection_title}
+                {collectionTitle}
               </button>
             );
           })

@@ -24,7 +24,10 @@ const TodoItem = ({ todo, dispatch }) => {
   const textContent = isEditing ? (
     <TodoEdit todo={todo} dispatch={dispatch} handleEdit={handleEdit} />
   ) : (
-    <label htmlFor={todo.id} className="todo-title">
+    <label
+      htmlFor={todo.id}
+      className={isCompleted ? "todo-title completed" : "todo-title"}
+    >
       {todo.title}
     </label>
   );

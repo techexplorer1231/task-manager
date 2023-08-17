@@ -13,18 +13,18 @@ const TodoTitle = ({ list, dispatch }) => {
   };
 
   const handleListDelete = () => {
-    dispatch({ type: TODO_DELETE_LIST, payload: list.collection_id });
+    dispatch({ type: TODO_DELETE_LIST, payload: list.collectionId });
   };
 
   const handleMultipleDelete = () => {
-    dispatch({ type: TODO_DELETE_MULTIPLE, payload: list.collection_id });
+    dispatch({ type: TODO_DELETE_MULTIPLE, payload: list.collectionId });
   };
 
   const listTitle = (
     <Wrapper>
       <div className="title-section">
         <article className="todo-title" onClick={handleEdit}>
-          {list.collection_title}
+          {list.collectionTitle}
         </article>
         <div>
           <Button onClick={handleEdit}>Edit Title</Button>

@@ -2,7 +2,7 @@ export function generateUniqueTitle(baseTitle, todosCollection) {
   const regex = new RegExp(`^${baseTitle}( \\d+)?$`);
 
   const matchingTitles = todosCollection.filter((collection) =>
-    regex.test(collection.collection_title)
+    regex.test(collection.collectionTitle)
   );
 
   if (matchingTitles.length === 0) {
@@ -10,7 +10,7 @@ export function generateUniqueTitle(baseTitle, todosCollection) {
   }
 
   const existingCounters = matchingTitles.map((collection) => {
-    const match = collection.collection_title.match(/(\d+)$/);
+    const match = collection.collectionTitle.match(/(\d+)$/);
     return match ? parseInt(match[1], 10) : 0;
   });
 

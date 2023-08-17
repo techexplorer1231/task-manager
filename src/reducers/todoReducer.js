@@ -6,7 +6,7 @@ import {
   TODO_DELETE,
   TODO_CHANGE_LIST,
   TODO_NEW_LIST,
-  TODO_EDIT_COLLECTION_TITLE,
+  TODO_EDIT_collectionTitle,
   TODO_EDIT_TOGGLE,
   TODO_DELETE_LIST,
   TODO_DELETE_MULTIPLE,
@@ -79,7 +79,7 @@ export default function todoReducer(todosCollection, action) {
       const collectionId = action.payload;
       const updatedState = todosCollection.map((collection) => ({
         ...collection,
-        isActive: collection.collection_id === collectionId,
+        isActive: collection.collectionId === collectionId,
       }));
       return updatedState;
     }
@@ -88,24 +88,24 @@ export default function todoReducer(todosCollection, action) {
       const op = [
         ...todosCollection,
         {
-          collection_title: generateUniqueTitle(
+          collectionTitle: generateUniqueTitle(
             "Untitled List",
             todosCollection
           ),
-          collection_id: Date.now(),
+          collectionId: Date.now(),
           isActive: false,
           todos: [{ id, title: "Your first Todo", completed: false }],
         },
       ];
       return op;
     }
-    case TODO_EDIT_COLLECTION_TITLE: {
+    case TODO_EDIT_collectionTitle: {
       const { id, collectionTitle } = action.payload;
       const updatedState = todosCollection.map((collection) => {
-        if (collection.collection_id === id) {
+        if (collection.collectionId === id) {
           return {
             ...collection,
-            collection_title: collectionTitle,
+            collectionTitle: collectionTitle,
           };
         }
         return collection;
@@ -130,7 +130,7 @@ export default function todoReducer(todosCollection, action) {
     case TODO_DELETE_LIST: {
       const collectionId = action.payload;
       const updatedState = todosCollection.filter(
-        (collection) => collection.collection_id !== collectionId
+        (collection) => collection.collectionId !== collectionId
       );
       // loop through the updated state and set the first list as active
       if (updatedState.length > 0) {
@@ -161,8 +161,8 @@ export default function todoReducer(todosCollection, action) {
 
 export const initialTodosCollection = [
   {
-    collection_title: "Daily Tasks 📝",
-    collection_id: 0,
+    collectionTitle: "Daily Tasks 📝",
+    collectionId: 0,
     isActive: true,
     isTitleEditing: false,
     todos: [
