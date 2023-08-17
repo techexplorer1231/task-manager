@@ -48,6 +48,7 @@ export default function todoReducer(todosCollection, action) {
         }
         return collection;
       });
+      console.log("TODO_EDIT", updatedTodos);
       return updatedTodos;
     }
     case "TODO_DELETE": {

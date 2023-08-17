@@ -19,7 +19,9 @@ const Wrapper = styled.div`
     margin: 8px 0;
     animation: ${fadeIn} 0.5s ease-in-out;
     margin-bottom: 1rem;
-    background-color: var(--white);
+    /* background-color: var(--white); */
+    background-color: #faaca8;
+    background-image: linear-gradient(19deg, #faaca8 0%, #ddd6f3 100%);
     padding: 1rem;
     border-radius: 1rem;
 
