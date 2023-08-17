@@ -3,6 +3,7 @@ import { MdDelete } from "react-icons/md";
 import { TbEdit } from "react-icons/tb";
 import Wrapper from "../assets/wrappers/TodoItem";
 import TodoEdit from "./TodoEdit";
+import Button from "../assets/wrappers/Button";
 import { TODO_TOGGLE } from "../constants/actionTypes";
 import { TODO_DELETE } from "../constants/actionTypes";
 import { TODO_EDIT_ENABLE } from "../constants/actionTypes";
@@ -48,14 +49,14 @@ const TodoItem = ({ todo, dispatch }) => {
         {textContent}
         <div>
           {!isEditing && (
-            <button onClick={handleEdit} className="todo-edit-btn">
+            <Button onClick={handleEdit} className="todo-edit-btn">
               <TbEdit />
-            </button>
+            </Button>
           )}
           {!isEditing && (
-            <button className="todo-delete-btn" onClick={handleDelete}>
+            <Button className="todo-delete-btn" onClick={handleDelete}>
               <MdDelete />
-            </button>
+            </Button>
           )}
         </div>
       </div>
