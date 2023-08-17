@@ -11,6 +11,13 @@ const Wrapper = styled.h3`
     flex-direction: column;
   }
 
+  .todo-title {
+    &:hover {
+      background-color: var(--primary-400);
+      cursor: pointer;
+    }
+  }
+
   @media (min-width: 992px) {
     .title-section {
       display: flex;
