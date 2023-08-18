@@ -11,10 +11,24 @@
 7. The entire app styling is done using styled-components.
 8. The app has reusable custom hooks like useFocusInput and useSidebarContext.
 9. Used webp images for faster loading.
+10. The app consists of two sidebars - one for desktop and one for mobile. The sidebar for mobile is a drawer that can be opened by clicking on the hamburger icon.
 
-# Getting Started with Create React App
+## Folder Structure
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- `src/`: Contains the main source code of your application.
+  - `components/`: Reusable UI components.
+  - `assets/wrappers/`: Styled-Components for each component.
+  - `reducers/`: Reducers for managing tasks and lists state.
+  - `hooks/`: Reusable custom hooks.
+  - `constants/`: Constants used in the app.
+  - `containers/`: Components that contain multiple components.
+  - `utils/`: Utility functions and modules.
+  - `App.js`: Root component of your app.
+  - `index.js`: Entry point for your app.
+- `public/`: Static assets that are directly copied to the build folder.
+- `node_modules/`: Dependencies installed via npm/yarn.
+- `package.json`: Configuration file for your project.
+- `README.md`: This file.
 
 ## Available Scripts
 
