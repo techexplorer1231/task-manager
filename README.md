@@ -10,6 +10,7 @@
 6. The app uses context API for managing sidebar state and useReducer hook for managing tasks and lists state.
 7. The entire app styling is done using styled-components.
 8. The app has reusable custom hooks like useFocusInput and useSidebarContext.
+9. Used webp images for faster loading.
 
 # Getting Started with Create React App
 
