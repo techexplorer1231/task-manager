@@ -1,7 +1,5 @@
 import React, { useEffect, useReducer, useState } from "react";
 import Navbar from "../components/Navbar";
-import SmallSidebar from "../components/SmallSidebar";
-import BigSidebar from "../components/BigSidebar";
 import Wrapper from "../assets/wrappers/Layout";
 import todoReducer, { initialTodosCollection } from "../reducers/todoReducer";
 import TodoContainer from "../containers/TodoContainer";
@@ -21,7 +19,7 @@ function Layout() {
       isActive: todo.isActive,
     }));
     setTitles(todosTitle);
-  }, [todosCollection, dispatch]);
+  }, [todosCollection]);
 
   return (
     <Wrapper>

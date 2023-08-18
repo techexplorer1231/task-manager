@@ -1,11 +1,11 @@
-import Wrapper from "../assets/wrappers/SmallSidebar";
+import Wrapper from "../assets/wrappers/MobileSidebar";
 import { FaTimes } from "react-icons/fa";
 import Logo from "./Logo";
 import Navlinks from "./Navlinks";
 import { useSidebarContext } from "../hooks/useSidebarContext";
 import { BsCalendar2Plus } from "react-icons/bs";
 
-function SmallSidebar({ dispatch, titles }) {
+function MobileSidebar({ dispatch, titles }) {
   const { isSidebarOpen, setIsSidebarOpen } = useSidebarContext();
 
   const toggle = () => {
@@ -44,4 +44,4 @@ function SmallSidebar({ dispatch, titles }) {
   );
 }
 
-export default SmallSidebar;
+export default MobileSidebar;

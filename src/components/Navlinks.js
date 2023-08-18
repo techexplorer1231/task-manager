@@ -1,4 +1,5 @@
 import { TODO_CHANGE_LIST } from "../constants/actionTypes";
+import Button from "../assets/wrappers/Button";
 
 const Navlinks = ({ toggleSidebar, dispatch, titles }) => {
   const updateTodos = (collectionId) => {
@@ -11,13 +12,13 @@ const Navlinks = ({ toggleSidebar, dispatch, titles }) => {
       {titles.map((todo) => {
         const { collectionId, collectionTitle, isActive } = todo;
         return (
-          <button
+          <Button
             key={collectionId}
             onClick={() => updateTodos(collectionId)}
             className={isActive ? "btn-link active" : "btn-link"}
           >
             {collectionTitle}
-          </button>
+          </Button>
         );
       })}
     </div>

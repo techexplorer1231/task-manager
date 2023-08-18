@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TodoTitleEdit from "./TodoTitleEdit";
 import Wrapper from "../assets/wrappers/TodoTitle";
 import Button from "../assets/wrappers/Button";
@@ -7,6 +7,10 @@ import { TODO_DELETE_LIST } from "../constants/actionTypes";
 
 const TodoTitle = ({ list, dispatch }) => {
   const [isEdit, setIsEdit] = useState(false);
+
+  useEffect(() => {
+    setIsEdit(false);
+  }, [list]);
 
   const handleEditTitle = () => {
     setIsEdit(!isEdit);

@@ -14,12 +14,11 @@ const fadeIn = keyframes`
 const Wrapper = styled.div`
   .todo-item {
     display: grid;
-    grid-template-columns: 1fr 12fr 3fr;
+    grid-template-columns: 1fr 12fr 4fr;
     align-items: center;
     margin: 8px 0;
     animation: ${fadeIn} 0.5s ease-in-out;
     margin-bottom: 1rem;
-    /* background-color: var(--white); */
     background-color: #faaca8;
     background-image: linear-gradient(19deg, #faaca8 0%, #ddd6f3 100%);
     padding: 1rem;
@@ -46,7 +45,7 @@ const Wrapper = styled.div`
 
   .todo-title {
     flex: 1;
-    font-size: 18px;
+    font-size: 1.1rem;
   }
 
   .completed {

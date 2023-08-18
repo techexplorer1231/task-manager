@@ -54,22 +54,24 @@ const Wrapper = styled.aside`
     width: 70vw;
     border: 1px solid var(--grey-50);
     background: transparent;
+    font-size: 1rem;
   }
   .btn-link:hover {
-    background: var(--primary-500);
-    color: var(--white);
+    /* background: var(--primary-500); */
+    background-image: linear-gradient(19deg, #faaca8 0%, #ddd6f3 100%);
+    color: var(--grey-900);
     cursor: pointer;
   }
   .btn-link:hover .icon {
     color: var(--primary-500);
   }
   .active {
-    color: var(--white);
-    background: var(--primary-500);
+    color: var(--grey-900);
+    background-image: linear-gradient(19deg, #faaca8 0%, #ddd6f3 100%);
   }
 
   .list-btn {
-    position: absolute;
+    position: fixed;
     bottom: 2rem;
     width: 70vw;
     background: var(--primary-500);
@@ -77,6 +79,7 @@ const Wrapper = styled.aside`
     color: var(--white);
     padding: 1rem 0;
     cursor: pointer;
+    font-size: 1rem;
   }
 `;
 export default Wrapper;

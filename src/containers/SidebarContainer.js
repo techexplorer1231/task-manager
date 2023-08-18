@@ -1,12 +1,12 @@
 import React from "react";
-import SmallSidebar from "../components/SmallSidebar";
-import BigSidebar from "../components/BigSidebar";
+import MobileSidebar from "../components/MobileSidebar";
+import Sidebar from "../components/Sidebar";
 
 const SidebarContainer = ({ titles, dispatch }) => {
   return (
     <>
-      <SmallSidebar dispatch={dispatch} titles={titles} />
-      <BigSidebar dispatch={dispatch} titles={titles} />
+      <MobileSidebar dispatch={dispatch} titles={titles} />
+      <Sidebar dispatch={dispatch} titles={titles} />
     </>
   );
 };

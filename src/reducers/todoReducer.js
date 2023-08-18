@@ -17,7 +17,6 @@ export default function todoReducer(todosCollection, action) {
   switch (type) {
     case TODO_ADD: {
       const { payload } = action;
-      console.log("todoReducer", action);
       const updatedTodos = todosCollection.map((collection) => {
         if (collection.isActive) {
           return {
@@ -60,7 +59,6 @@ export default function todoReducer(todosCollection, action) {
         }
         return collection;
       });
-      console.log("updatedTodos", updatedTodos);
       return updatedTodos;
     }
     case TODO_DELETE: {
@@ -82,6 +80,7 @@ export default function todoReducer(todosCollection, action) {
         ...collection,
         isActive: collection.collectionId === collectionId,
       }));
+      console.log("TODO_CHANGE_LIST", updatedState);
       return updatedState;
     }
     case TODO_NEW_LIST: {
@@ -106,10 +105,12 @@ export default function todoReducer(todosCollection, action) {
           return {
             ...collection,
             collectionTitle: collectionTitle,
+            isTitleEditing: !collection.isTitleEditing,
           };
         }
         return collection;
       });
+      console.log("TODO_EDIT_COLLECTION_TITLE", updatedState);
       return updatedState;
     }
     case TODO_EDIT_ENABLE: {
