@@ -10,7 +10,7 @@ const Wrapper = styled.section`
 
   @media (min-width: 992px) {
     .todo-list {
-      height: 75vh;
+      height: 70vh;
       overflow-x: auto;
       display: flex;
     }
