@@ -1,5 +1,5 @@
 import React, { useEffect, useReducer, useState } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "./Navbar";
 import Wrapper from "../assets/wrappers/Layout";
 import todoReducer, { initialTodos } from "../reducers/todoReducer";
 import TodoContainer from "../containers/TodoContainer";
