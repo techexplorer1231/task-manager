@@ -16,6 +16,7 @@ const Navlinks = ({ toggleSidebar, dispatch, titles }) => {
             key={collectionId}
             onClick={() => updateTodos(collectionId)}
             className={isActive ? "btn-link active" : "btn-link"}
+            aria-label="Select a List"
           >
             {collectionTitle.slice(0, 20)}
           </Button>

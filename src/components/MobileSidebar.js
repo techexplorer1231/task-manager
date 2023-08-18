@@ -25,7 +25,11 @@ function MobileSidebar({ dispatch, titles }) {
         }
       >
         <div className="content">
-          <Button className="close-btn" onClick={toggle}>
+          <Button
+            className="close-btn"
+            onClick={toggle}
+            aria-label="Close Overlay"
+          >
             <FaTimes />
           </Button>
           <header>
@@ -36,7 +40,11 @@ function MobileSidebar({ dispatch, titles }) {
             dispatch={dispatch}
             titles={titles}
           />
-          <Button className="list-btn" onClick={handleNewList}>
+          <Button
+            className="list-btn"
+            onClick={handleNewList}
+            aria-label="Create a New List"
+          >
             <BsCalendar2Plus /> New List
           </Button>
         </div>

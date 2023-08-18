@@ -34,9 +34,18 @@ const TodoTitle = ({ list, dispatch }) => {
           {list.collectionTitle}
         </article>
         <div>
-          <Button onClick={handleEditTitle}>Edit Title</Button>
-          <Button onClick={handleListDelete}>Delete List</Button>
-          <Button onClick={handleMultipleDelete}>Delete Selected</Button>
+          <Button onClick={handleEditTitle} aria-label="Edit List Title">
+            Edit Title
+          </Button>
+          <Button onClick={handleListDelete} aria-label="Delete List">
+            Delete List
+          </Button>
+          <Button
+            onClick={handleMultipleDelete}
+            aria-label="Delete Selected Todo Items"
+          >
+            Delete Selected
+          </Button>
         </div>
       </div>
     </Wrapper>

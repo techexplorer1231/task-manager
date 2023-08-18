@@ -15,7 +15,12 @@ function Navbar() {
   return (
     <Wrapper>
       <header className="nav-center">
-        <Button type="button" className="toggle-btn" onClick={toggle}>
+        <Button
+          type="button"
+          className="toggle-btn"
+          onClick={toggle}
+          aria-label="Toggle Sidebar"
+        >
           <FaAlignLeft />
         </Button>
         <nav>

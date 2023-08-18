@@ -31,6 +31,7 @@ function Sidebar({ titles, dispatch }) {
           type="button"
           className={isSidebarOpen ? "list-btn" : "list-btn open"}
           onClick={handleNewList}
+          aria-label="Create a New List"
         >
           <BsCalendar2Plus /> New List
         </Button>

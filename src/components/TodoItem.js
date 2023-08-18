@@ -49,12 +49,20 @@ const TodoItem = ({ todo, dispatch }) => {
         {textContent}
         <div>
           {!isEditing && (
-            <Button onClick={handleEdit} className="todo-edit-btn">
+            <Button
+              onClick={handleEdit}
+              className="todo-edit-btn"
+              aria-label="Edit Todo Item"
+            >
               <TbEdit />
             </Button>
           )}
           {!isEditing && (
-            <Button className="todo-delete-btn" onClick={handleDelete}>
+            <Button
+              className="todo-delete-btn"
+              onClick={handleDelete}
+              aria-label="Delete Todo Item"
+            >
               <MdDelete />
             </Button>
           )}
