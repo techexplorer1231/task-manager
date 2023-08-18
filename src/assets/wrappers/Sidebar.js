@@ -52,7 +52,6 @@ const Wrapper = styled.aside`
       font-size: 1rem;
     }
     .btn-link:hover {
-      /* background: var(--primary-400); */
       background-image: linear-gradient(19deg, #faaca8 0%, #ddd6f3 100%);
       padding-left: 3rem;
       color: var(--grey-900);

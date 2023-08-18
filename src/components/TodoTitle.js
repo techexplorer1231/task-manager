@@ -4,16 +4,19 @@ import Wrapper from "../assets/wrappers/TodoTitle";
 import Button from "../assets/wrappers/Button";
 import { TODO_DELETE_MULTIPLE } from "../constants/actionTypes";
 import { TODO_DELETE_LIST } from "../constants/actionTypes";
+import { TODO_EDIT_COLLECTION_TITLE } from "../constants/actionTypes";
 
 const TodoTitle = ({ list, dispatch }) => {
-  const [isEdit, setIsEdit] = useState(false);
-
+  const [isEdit, setIsEdit] = useState(list.isTitleEditing);
   useEffect(() => {
-    setIsEdit(false);
+    setIsEdit(list.isTitleEditing);
   }, [list]);
 
   const handleEditTitle = () => {
-    setIsEdit(!isEdit);
+    dispatch({
+      type: TODO_EDIT_COLLECTION_TITLE,
+      payload: { collectionTitle: list.collectionTitle, id: list.collectionId },
+    });
   };
 
   const handleListDelete = () => {
@@ -40,11 +43,7 @@ const TodoTitle = ({ list, dispatch }) => {
   );
 
   const textContent = isEdit ? (
-    <TodoTitleEdit
-      list={list}
-      dispatch={dispatch}
-      handleEdit={handleEditTitle}
-    />
+    <TodoTitleEdit list={list} dispatch={dispatch} />
   ) : (
     listTitle
   );

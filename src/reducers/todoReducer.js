@@ -110,7 +110,6 @@ export default function todoReducer(todosCollection, action) {
         }
         return collection;
       });
-      console.log("TODO_EDIT_COLLECTION_TITLE", updatedState);
       return updatedState;
     }
     case TODO_EDIT_ENABLE: {

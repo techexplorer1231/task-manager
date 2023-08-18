@@ -3,13 +3,12 @@ import Wrapper from "../assets/wrappers/TodoTitleEdit";
 import { TODO_EDIT_COLLECTION_TITLE } from "../constants/actionTypes";
 import TextInputForm from "./TextInputForm";
 
-const TodoTitleEdit = ({ list, dispatch, handleEdit }) => {
+const TodoTitleEdit = ({ list, dispatch }) => {
   const handleSubmit = (collectionTitle) => {
     dispatch({
       type: TODO_EDIT_COLLECTION_TITLE,
       payload: { collectionTitle, id: list.collectionId },
     });
-    handleEdit();
   };
 
   return (
