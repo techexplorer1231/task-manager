@@ -12,7 +12,7 @@ const Wrapper = styled.header`
     width: 100%;
     padding: 0.5rem;
     border: 1px solid var(--primary-200);
-    border-radius: 5px;
+    border-radius: 0.5rem;
     height: 2.2rem;
     appearance: none;
   }

@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 12fr 4fr;
     align-items: center;
-    margin: 8px 0;
+    margin: 1rem 0;
     animation: ${fadeIn} 0.5s ease-in-out;
     margin-bottom: 1rem;
     background-color: #faaca8;
@@ -40,7 +40,7 @@ const Wrapper = styled.div`
   }
 
   .todo-checkbox {
-    margin-right: 8px;
+    margin-right: 0.5rem;
   }
 
   .todo-title {
@@ -78,7 +78,12 @@ const Wrapper = styled.div`
   @media (min-width: 992px) {
     .todo-item {
       display: grid;
-      grid-template-columns: 1fr 12fr 1fr;
+      grid-template-columns: 1fr 10fr 2fr;
+      padding: 1rem;
+    }
+
+    .todo-checkbox {
+      margin-right: 0.5rem;
     }
   }
 `;

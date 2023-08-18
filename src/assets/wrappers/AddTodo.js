@@ -9,7 +9,7 @@ const Wrapper = styled.header`
   .add-section input {
     width: 100%;
     border: 1px solid var(--primary-200);
-    border-radius: 5px;
+    border-radius: 0.5rem;
     height: 2.2rem;
     appearance: none;
     padding: 0.5rem;

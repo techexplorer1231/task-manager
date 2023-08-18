@@ -4,8 +4,8 @@ const Button = styled.button`
   background-color: var(--primary-400);
   color: var(--white);
   border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
   margin: 0.1rem;
   cursor: pointer;
   outline: none;
