@@ -12,6 +12,7 @@
 8. The app has reusable custom hooks like useFocusInput and useSidebarContext.
 9. Used webp images for faster loading.
 10. The app consists of two sidebars - one for desktop and one for mobile. The sidebar for mobile is a drawer that can be opened by clicking on the hamburger icon.
+11. Added ellipsis for long text handling.
 
 ## Folder Structure
 

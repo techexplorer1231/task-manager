@@ -30,7 +30,7 @@ const TodoItem = ({ todo, dispatch }) => {
   ) : (
     <label
       htmlFor={todo.id}
-      className={isCompleted ? "todo-title completed" : "todo-title"}
+      className={isCompleted ? "todo-text completed" : "todo-text"}
     >
       {todo.title}
     </label>

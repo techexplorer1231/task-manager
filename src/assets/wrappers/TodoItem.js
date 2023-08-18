@@ -14,7 +14,7 @@ const fadeIn = keyframes`
 const Wrapper = styled.div`
   .todo-item {
     display: grid;
-    grid-template-columns: 1fr 12fr 4fr;
+    grid-template-columns: 1fr 7fr 2fr;
     align-items: center;
     margin: 1rem 0;
     animation: ${fadeIn} 0.5s ease-in-out;
@@ -37,15 +37,16 @@ const Wrapper = styled.div`
       height: 1.2rem;
       width: 1.2rem;
     }
+
+    .todo-text {
+      width: 50vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   .todo-checkbox {
     margin-right: 0.5rem;
-  }
-
-  .todo-title {
-    flex: 1;
-    font-size: 1.1rem;
   }
 
   .completed {
@@ -78,7 +79,7 @@ const Wrapper = styled.div`
   @media (min-width: 992px) {
     .todo-item {
       display: grid;
-      grid-template-columns: 1fr 10fr 2fr;
+      grid-template-columns: 1fr 7fr 1fr;
       padding: 1rem;
     }
 

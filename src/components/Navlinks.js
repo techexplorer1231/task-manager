@@ -17,7 +17,7 @@ const Navlinks = ({ toggleSidebar, dispatch, titles }) => {
             onClick={() => updateTodos(collectionId)}
             className={isActive ? "btn-link active" : "btn-link"}
           >
-            {collectionTitle}
+            {collectionTitle.slice(0, 20)}
           </Button>
         );
       })}

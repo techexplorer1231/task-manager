@@ -10,6 +10,9 @@ const Wrapper = styled.h3`
   }
 
   .todo-title {
+    width: 80vw;
+    overflow: hidden;
+    text-overflow: ellipsis;
     transition: color 0.5s ease-in-out, border-bottom-color 0.5s ease-in-out;
 
     &:hover {
@@ -25,6 +28,11 @@ const Wrapper = styled.h3`
       justify-content: space-between;
       align-items: center;
       flex-direction: row;
+    }
+    .todo-title {
+      width: 30vw;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 `;
