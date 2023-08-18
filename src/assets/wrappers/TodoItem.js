@@ -14,7 +14,7 @@ const fadeIn = keyframes`
 const Wrapper = styled.div`
   .todo-item {
     display: grid;
-    grid-template-columns: 1fr 7fr 2fr;
+    grid-template-columns: 1fr 6fr 3fr;
     align-items: center;
     margin: 1rem 0;
     animation: ${fadeIn} 0.5s ease-in-out;
