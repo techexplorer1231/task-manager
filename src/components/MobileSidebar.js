@@ -4,6 +4,7 @@ import Logo from "./Logo";
 import Navlinks from "./Navlinks";
 import { useSidebarContext } from "../hooks/useSidebarContext";
 import { BsCalendar2Plus } from "react-icons/bs";
+import Button from "../assets/wrappers/Button";
 
 function MobileSidebar({ dispatch, titles }) {
   const { isSidebarOpen, setIsSidebarOpen } = useSidebarContext();
@@ -24,9 +25,9 @@ function MobileSidebar({ dispatch, titles }) {
         }
       >
         <div className="content">
-          <button className="close-btn" onClick={toggle}>
+          <Button className="close-btn" onClick={toggle}>
             <FaTimes />
-          </button>
+          </Button>
           <header>
             <Logo />
           </header>
@@ -35,9 +36,9 @@ function MobileSidebar({ dispatch, titles }) {
             dispatch={dispatch}
             titles={titles}
           />
-          <button className="list-btn" onClick={handleNewList}>
+          <Button className="list-btn" onClick={handleNewList}>
             <BsCalendar2Plus /> New List
-          </button>
+          </Button>
         </div>
       </div>
     </Wrapper>

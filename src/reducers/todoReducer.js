@@ -138,7 +138,7 @@ export default function todoReducer(todosCollection, action) {
         updatedState[0].isActive = true;
       }
       if (updatedState.length === 0) {
-        return [initialTodosCollection.slice()[0]];
+        return [initialTodos.slice()[0]];
       }
       return updatedState;
     }
@@ -160,9 +160,9 @@ export default function todoReducer(todosCollection, action) {
   }
 }
 
-export const initialTodosCollection = [
+export const initialTodos = [
   {
-    collectionTitle: "Daily Tasks 1 📝",
+    collectionTitle: "Daily Tasks 1 🤖",
     collectionId: 0,
     isActive: true,
     isTitleEditing: false,
@@ -173,7 +173,7 @@ export const initialTodosCollection = [
     ],
   },
   {
-    collectionTitle: "Daily Tasks 2 📝",
+    collectionTitle: "Daily Tasks 2 👜",
     collectionId: 1,
     isActive: false,
     isTitleEditing: false,
@@ -183,7 +183,7 @@ export const initialTodosCollection = [
     ],
   },
   {
-    collectionTitle: "Daily Tasks 3 📝",
+    collectionTitle: "Daily Tasks 3  🧘🏼‍♂️",
     collectionId: 2,
     isActive: false,
     isTitleEditing: false,

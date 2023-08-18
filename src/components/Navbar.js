@@ -3,6 +3,7 @@ import Wrapper from "../assets/wrappers/Navbar";
 import { FaAlignLeft } from "react-icons/fa";
 import Logo from "./Logo";
 import { useSidebarContext } from "../hooks/useSidebarContext";
+import Button from "../assets/wrappers/Button";
 
 function Navbar() {
   const { isSidebarOpen, setIsSidebarOpen } = useSidebarContext();
@@ -14,9 +15,9 @@ function Navbar() {
   return (
     <Wrapper>
       <header className="nav-center">
-        <button type="button" className="toggle-btn" onClick={toggle}>
+        <Button type="button" className="toggle-btn" onClick={toggle}>
           <FaAlignLeft />
-        </button>
+        </Button>
         <nav>
           <Logo />
           <h4 className="logo-text">Your Task Organizer</h4>
