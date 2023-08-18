@@ -7,12 +7,14 @@ const TextInputForm = ({
   inputPlaceholder,
   initialValue,
   inputClassName,
+  onTextChange,
 }) => {
   const [inputValue, setInputValue] = useState(initialValue);
   const inputRef = useFocusInput();
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
+    onTextChange && onTextChange(e.target.value);
   };
 
   const handleSubmit = (e) => {

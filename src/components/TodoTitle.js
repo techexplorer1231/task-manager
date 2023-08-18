@@ -4,7 +4,7 @@ import Wrapper from "../assets/wrappers/TodoTitle";
 import Button from "../assets/wrappers/Button";
 import { TODO_DELETE_MULTIPLE } from "../constants/actionTypes";
 import { TODO_DELETE_LIST } from "../constants/actionTypes";
-import { TODO_EDIT_COLLECTION_TITLE } from "../constants/actionTypes";
+import { TODO_EDIT_COLLECTION_TITLE_SUBMIT } from "../constants/actionTypes";
 
 const TodoTitle = ({ list, dispatch }) => {
   const [isEdit, setIsEdit] = useState(list.isTitleEditing);
@@ -14,7 +14,7 @@ const TodoTitle = ({ list, dispatch }) => {
 
   const handleEditTitle = () => {
     dispatch({
-      type: TODO_EDIT_COLLECTION_TITLE,
+      type: TODO_EDIT_COLLECTION_TITLE_SUBMIT,
       payload: { collectionTitle: list.collectionTitle, id: list.collectionId },
     });
   };

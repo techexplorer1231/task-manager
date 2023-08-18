@@ -2,14 +2,16 @@ import { generateUniqueTitle } from "../utils/generateUniqueTitle";
 import {
   TODO_ADD,
   TODO_TOGGLE,
-  TODO_EDIT,
+  TODO_EDIT_SUBMIT,
   TODO_DELETE,
   TODO_CHANGE_LIST,
   TODO_NEW_LIST,
-  TODO_EDIT_COLLECTION_TITLE,
+  TODO_EDIT_COLLECTION_TITLE_SUBMIT,
   TODO_EDIT_ENABLE,
   TODO_DELETE_LIST,
   TODO_DELETE_MULTIPLE,
+  TODO_EDIT,
+  TODO_EDIT_COLLECTION_TITLE,
 } from "../constants/actionTypes";
 
 export default function todoReducer(todosCollection, action) {
@@ -45,7 +47,7 @@ export default function todoReducer(todosCollection, action) {
       });
       return updatedTodos;
     }
-    case TODO_EDIT: {
+    case TODO_EDIT_SUBMIT: {
       const { id, title } = action.payload;
       const updatedTodos = todosCollection.map((collection) => {
         if (collection.isActive) {
@@ -53,6 +55,22 @@ export default function todoReducer(todosCollection, action) {
             ...collection,
             todos: collection.todos.map((todo) =>
               todo.id === id ? { ...todo, title, isEditing: false } : todo
+            ),
+          };
+          return updatedCollection;
+        }
+        return collection;
+      });
+      return updatedTodos;
+    }
+    case TODO_EDIT: {
+      const { id, title } = action.payload;
+      const updatedTodos = todosCollection.map((collection) => {
+        if (collection.isActive) {
+          const updatedCollection = {
+            ...collection,
+            todos: collection.todos.map((todo) =>
+              todo.id === id ? { ...todo, title } : todo
             ),
           };
           return updatedCollection;
@@ -80,7 +98,6 @@ export default function todoReducer(todosCollection, action) {
         ...collection,
         isActive: collection.collectionId === collectionId,
       }));
-      console.log("TODO_CHANGE_LIST", updatedState);
       return updatedState;
     }
     case TODO_NEW_LIST: {
@@ -98,7 +115,7 @@ export default function todoReducer(todosCollection, action) {
         },
       ];
     }
-    case TODO_EDIT_COLLECTION_TITLE: {
+    case TODO_EDIT_COLLECTION_TITLE_SUBMIT: {
       const { id, collectionTitle } = action.payload;
       const updatedState = todosCollection.map((collection) => {
         if (collection.collectionId === id) {
@@ -106,6 +123,19 @@ export default function todoReducer(todosCollection, action) {
             ...collection,
             collectionTitle: collectionTitle,
             isTitleEditing: !collection.isTitleEditing,
+          };
+        }
+        return collection;
+      });
+      return updatedState;
+    }
+    case TODO_EDIT_COLLECTION_TITLE: {
+      const { id, title } = action.payload;
+      const updatedState = todosCollection.map((collection) => {
+        if (collection.collectionId === id) {
+          return {
+            ...collection,
+            collectionTitle: title,
           };
         }
         return collection;
